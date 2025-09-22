@@ -7,6 +7,7 @@ import EADomains from './pages/EADomains';
 import Implementation from './pages/Implementation';
 import Metrics from './pages/Metrics';
 import Risks from './pages/Risks';
+import Synthesis from './pages/Synthesis';
 import './App.css';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         return <Metrics />;
       case 'risks':
         return <Risks />;
+      case 'synthesis':
+        return <Synthesis />;
       default:
         return <Home onSectionChange={setActiveSection} />;
     }

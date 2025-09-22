@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, BarChart3, Database, Monitor, Shield, BookOpen } from 'lucide-react';
+import { Menu, X, Home, BarChart3, Database, Monitor, Shield, BookOpen, Crown } from 'lucide-react';
 
 interface HeaderProps {
   activeSection: string;
@@ -17,6 +17,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onSectionChange }) => {
     { id: 'implementation', name: 'Implementation', icon: Monitor },
     { id: 'metrics', name: 'KPIs & Metrics', icon: BarChart3 },
     { id: 'risks', name: 'Risks', icon: Shield },
+    { id: 'synthesis', name: 'Strategic Synthesis', icon: Crown },
   ];
 
   return (
