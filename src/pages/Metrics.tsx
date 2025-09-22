@@ -359,11 +359,11 @@ export default function Metrics() {
                 <div key={index} className="border-b border-gray-100 pb-3">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-medium text-gray-900">{item.category}</span>
-                    <span className="text-lg font-bold text-green-600">{item.ratio}:1 ROI</span>
+                    <span className="text-lg font-bold text-green-600">{item.ratio}:1 Ratio</span>
                   </div>
                   <div className="flex justify-between text-sm text-gray-600">
-                    <span>Investment: ${item.investment}M</span>
-                    <span>Return: ${item.return}M</span>
+                    <span>Investment: ₱{(item.investment * 50)}M</span>
+                    <span>Return: ₱{(item.return * 50)}M</span>
                   </div>
                 </div>
               ))}
@@ -371,9 +371,9 @@ export default function Metrics() {
             
             <div className="mt-6 p-4 bg-green-50 rounded-lg">
               <div className="text-sm text-gray-700">
-                <strong className="text-green-700">Total PRC Investment:</strong> $14.4M  |  
-                <strong className="text-green-700">Total Returns:</strong> $51.2M  |  
-                <strong className="text-green-700">Average ROI:</strong> 3.6:1
+                <strong className="text-green-700">Total PRC Investment:</strong> ₱720M  |  
+                <strong className="text-green-700">Total Returns:</strong> ₱2.56B  |  
+                <strong className="text-green-700">Average Cost-Benefit:</strong> 3.6:1
               </div>
             </div>
           </div>
@@ -396,7 +396,7 @@ export default function Metrics() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ category, investment }) => `${category}: $${investment}M`}
+                    label={({ category, investment }) => `${category}: ₱${(Number(investment) * 50)}M`}
                     outerRadius={80}
                     fill="#8884d8"
                     dataKey="investment"
@@ -405,7 +405,7 @@ export default function Metrics() {
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip formatter={(value) => [`$${value}M`, 'Investment']} />
+                  <Tooltip formatter={(value) => [`₱${(Number(value) * 50)}M`, 'Investment']} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -443,7 +443,7 @@ export default function Metrics() {
             
             <div className="text-center p-6 bg-orange-50 rounded-lg">
               <TrendingUp className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-              <div className="text-3xl font-bold text-orange-600 mb-2">$47M</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">₱2.3B</div>
               <div className="text-sm text-gray-600">Annual Cost Savings</div>
               <div className="text-xs text-gray-500 mt-2">From Gartner-recommended optimizations</div>
             </div>
@@ -540,7 +540,7 @@ export default function Metrics() {
                 <Database className="h-4 w-4 mr-2 text-blue-600" />
                 Data-Driven Decisions:
               </div>
-              <div className="text-gray-700">Gartner's analytics frameworks enable evidence-based policy making, resulting in 34% improvement in program effectiveness and $12M in resource optimization.</div>
+              <div className="text-gray-700">Gartner's analytics frameworks enable evidence-based policy making, resulting in 34% improvement in program effectiveness and ₱600M in resource optimization.</div>
             </div>
             <div className="p-4 bg-gradient-to-r from-green-50 to-purple-50 rounded-lg">
               <div className="font-medium text-gray-900 mb-2 flex items-center">

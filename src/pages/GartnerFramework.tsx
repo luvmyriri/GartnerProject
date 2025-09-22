@@ -61,7 +61,7 @@ const GartnerFramework: React.FC = () => {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-3 text-blue-600" />
-                      $4.9B annual revenue (2023) - demonstrating market leadership
+                      ₱245B annual revenue (2023) - demonstrating market leadership
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-5 h-5 mr-3 text-blue-600" />
