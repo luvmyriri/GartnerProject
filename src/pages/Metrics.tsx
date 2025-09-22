@@ -1,6 +1,5 @@
-import React from 'react';
-import { TrendingUp, Target, BarChart3, ArrowUp, Users, Building2, Database, Shield, CheckCircle, AlertCircle } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
+import { TrendingUp, Target, BarChart3, ArrowUp, Users, Building2, Database, Shield, CheckCircle } from 'lucide-react';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
 import { kpiMetrics } from '../data/prcData';
 
 export default function Metrics() {
@@ -402,7 +401,7 @@ export default function Metrics() {
                     fill="#8884d8"
                     dataKey="investment"
                   >
-                    {gartnerROI.map((entry, index) => (
+                    {gartnerROI.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>

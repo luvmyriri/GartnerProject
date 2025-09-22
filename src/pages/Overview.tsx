@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, TrendingUp, Users, Building2, Database, Shield } from 'lucide-react';
+import { TrendingUp, Users, Building2, Database, Shield } from 'lucide-react';
 import { prcStats } from '../data/prcData';
 
 const Overview: React.FC = () => {

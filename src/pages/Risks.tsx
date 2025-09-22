@@ -1,5 +1,4 @@
-import React from 'react';
-import { CheckCircle2, AlertTriangle, TrendingUp, Users, Building2, Database, Shield, Target, BarChart3, Zap, Globe, Clock, DollarSign, Award, AlertCircle, XCircle, Activity, Brain, Lightbulb, Star, ThumbsUp, ThumbsDown } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, TrendingUp, Shield, Target, BarChart3, Zap, Award, AlertCircle, Star, ThumbsUp, ThumbsDown } from 'lucide-react';
 
 export default function Risks() {
   // Comprehensive Strengths Analysis
@@ -141,7 +140,7 @@ export default function Risks() {
     }
   ];
 
-  const getColorClasses = (color: string, type: 'strength' | 'weakness') => {
+  const getColorClasses = (color: string) => {
     const colors = {
       blue: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-800', icon: 'text-blue-600' },
       green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', icon: 'text-green-600' },
@@ -228,7 +227,7 @@ export default function Risks() {
           
           <div className="space-y-8">
             {gartnerPrcStrengths.map((category, categoryIndex) => {
-              const colors = getColorClasses(category.color, 'strength');
+              const colors = getColorClasses(category.color);
               const IconComponent = category.icon;
               
               return (
@@ -277,7 +276,7 @@ export default function Risks() {
           
           <div className="space-y-8">
             {gartnerPrcWeaknesses.map((category, categoryIndex) => {
-              const colors = getColorClasses(category.color, 'weakness');
+              const colors = getColorClasses(category.color);
               const IconComponent = category.icon;
               
               return (

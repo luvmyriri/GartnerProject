@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Building2, TrendingUp, Globe, Shield, Users, CheckCircle, ArrowRight, ExternalLink } from 'lucide-react';
+import { BookOpen, TrendingUp, Globe, Shield, Users, CheckCircle, ArrowRight, ExternalLink } from 'lucide-react';
 
 const GartnerFramework: React.FC = () => {
   return (

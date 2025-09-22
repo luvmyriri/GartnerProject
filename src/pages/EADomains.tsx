@@ -478,7 +478,7 @@ const getGartnerMethodology = (domainId: string): JSX.Element => {
             Gartner's Capability-Based Planning methodology.
           </p>
           <div className="bg-blue-50 p-3 rounded-lg">
-            <h7 className="font-semibold text-blue-800 mb-2 block">Core Gartner Principles Applied:</h7>
+            <h6 className="font-semibold text-blue-800 mb-2 block">Core Gartner Principles Applied:</h6>
             <ul className="text-sm text-blue-700 space-y-1">
               <li>• <strong>Capability Mapping:</strong> Identify and optimize the 46 profession-specific capabilities</li>
               <li>• <strong>Value Stream Analysis:</strong> Map end-to-end professional lifecycle journeys</li>
@@ -507,7 +507,7 @@ const getGartnerMethodology = (domainId: string): JSX.Element => {
             across all 46 regulated professions and associated examination systems.
           </p>
           <div className="bg-green-50 p-3 rounded-lg">
-            <h7 className="font-semibold text-green-800 mb-2 block">Gartner Data Architecture Principles:</h7>
+            <h6 className="font-semibold text-green-800 mb-2 block">Gartner Data Architecture Principles:</h6>
             <ul className="text-sm text-green-700 space-y-1">
               <li>• <strong>Master Data Management:</strong> Single golden record for each of 529,772+ professionals</li>
               <li>• <strong>Data Fabric Architecture:</strong> Seamless integration across examination, licensing, and renewal systems</li>
@@ -536,7 +536,7 @@ const getGartnerMethodology = (domainId: string): JSX.Element => {
             digital services while maintaining enterprise-grade reliability for high-stakes scenarios like professional examinations.
           </p>
           <div className="bg-purple-50 p-3 rounded-lg">
-            <h7 className="font-semibold text-purple-800 mb-2 block">Gartner Application Design Principles:</h7>
+            <h6 className="font-semibold text-purple-800 mb-2 block">Gartner Application Design Principles:</h6>
             <ul className="text-sm text-purple-700 space-y-1">
               <li>• <strong>Composable Architecture:</strong> Modular applications adaptable to changing regulatory requirements</li>
               <li>• <strong>API-First Design:</strong> Enable seamless integration with CHED, DOH, and other government agencies</li>
@@ -565,7 +565,7 @@ const getGartnerMethodology = (domainId: string): JSX.Element => {
             while achieving the scale and reliability needed for national professional regulation services.
           </p>
           <div className="bg-orange-50 p-3 rounded-lg">
-            <h7 className="font-semibold text-orange-800 mb-2 block">Gartner Technology Principles:</h7>
+            <h6 className="font-semibold text-orange-800 mb-2 block">Gartner Technology Principles:</h6>
             <ul className="text-sm text-orange-700 space-y-1">
               <li>• <strong>Cloud-Native Architecture:</strong> Leverage Gartner-recommended multi-cloud strategies for resilience</li>
               <li>• <strong>Infrastructure as Code:</strong> Automated deployment and scaling based on Gartner best practices</li>
@@ -594,7 +594,7 @@ const getGartnerMethodology = (domainId: string): JSX.Element => {
             data and maintain examination integrity across all digital touchpoints.
           </p>
           <div className="bg-red-50 p-3 rounded-lg">
-            <h7 className="font-semibold text-red-800 mb-2 block">Gartner Security Framework Components:</h7>
+            <h6 className="font-semibold text-red-800 mb-2 block">Gartner Security Framework Components:</h6>
             <ul className="text-sm text-red-700 space-y-1">
               <li>• <strong>Zero Trust Network Access (ZTNA):</strong> Secure access for all examination and administrative systems</li>
               <li>• <strong>Continuous Threat Exposure Management:</strong> Real-time threat detection and response</li>
@@ -623,7 +623,7 @@ const getGartnerMethodology = (domainId: string): JSX.Element => {
             methodology to ensure coordinated implementation across all regulatory functions and stakeholder agencies.
           </p>
           <div className="bg-indigo-50 p-3 rounded-lg">
-            <h7 className="font-semibold text-indigo-800 mb-2 block">Gartner Governance Principles:</h7>
+            <h6 className="font-semibold text-indigo-800 mb-2 block">Gartner Governance Principles:</h6>
             <ul className="text-sm text-indigo-700 space-y-1">
               <li>• <strong>Architecture Review Board (ARB):</strong> Structured decision-making following Gartner's ARB methodology</li>
               <li>• <strong>EA Maturity Assessment:</strong> Regular evaluation using Gartner's EA maturity model</li>

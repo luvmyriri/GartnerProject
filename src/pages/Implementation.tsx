@@ -1,6 +1,5 @@
 import React from 'react';
-import { Building2, Database, Monitor, Cog, Shield, FileCheck, TrendingUp, Users } from 'lucide-react';
-import { implementationPhases } from '../data/prcData';
+import { Building2, Database, Cog, Shield, FileCheck, TrendingUp, Users } from 'lucide-react';
 
 const Implementation: React.FC = () => {
   return (
