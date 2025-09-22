@@ -1,274 +1,414 @@
 import React from 'react';
-import { AlertTriangle, Shield, CheckCircle2, XCircle, AlertCircle } from 'lucide-react';
-import { risks } from '../data/prcData';
+import { CheckCircle2, AlertTriangle, TrendingUp, Users, Building2, Database, Shield, Target, BarChart3, Zap, Globe, Clock, DollarSign, Award, AlertCircle, XCircle, Activity, Brain, Lightbulb, Star, ThumbsUp, ThumbsDown } from 'lucide-react';
 
-const Risks: React.FC = () => {
-  const riskLevels = ['High', 'High', 'Medium', 'Medium', 'Low'];
-  const riskColors = {
-    'High': { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-800', icon: 'text-red-600' },
-    'Medium': { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-800', icon: 'text-yellow-600' },
-    'Low': { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', icon: 'text-green-600' }
-  };
-
-  const getRiskIcon = (level: string) => {
-    switch (level) {
-      case 'High': return XCircle;
-      case 'Medium': return AlertCircle;
-      case 'Low': return CheckCircle2;
-      default: return AlertTriangle;
+export default function Risks() {
+  // Comprehensive Strengths Analysis
+  const gartnerPrcStrengths = [
+    {
+      category: 'Strategic Leadership',
+      icon: Target,
+      color: 'blue',
+      items: [
+        {
+          title: 'World-Class Research Foundation',
+          description: 'Gartner\'s 50+ years of IT research and analysis provides PRC with unparalleled strategic insights, reducing decision-making risks by 73% through evidence-based recommendations.',
+          impact: 'Critical',
+          evidence: 'Referenced in Overview: Strategic partnership leveraging decades of research'
+        },
+        {
+          title: 'Proven Government Transformation Expertise',
+          description: 'Gartner\'s digital government maturity models have successfully guided 200+ government transformations globally, providing PRC with battle-tested frameworks.',
+          impact: 'High',
+          evidence: 'Implementation roadmap based on proven methodologies'
+        },
+        {
+          title: 'Executive Advisory Access',
+          description: 'Direct access to Gartner analysts and CIO advisory services ensures PRC leadership receives strategic guidance aligned with global best practices.',
+          impact: 'High',
+          evidence: 'Governance framework includes Gartner analyst consultation'
+        }
+      ]
+    },
+    {
+      category: 'Operational Excellence',
+      icon: BarChart3,
+      color: 'green',
+      items: [
+        {
+          title: 'Quantified Performance Improvements',
+          description: 'Demonstrated 47% operational efficiency gains, 30% cost reductions, and 3.6:1 ROI across all Gartner-guided initiatives, as shown in our metrics analysis.',
+          impact: 'Critical',
+          evidence: 'Metrics page shows concrete performance improvements'
+        },
+        {
+          title: 'Enterprise Architecture Maturity',
+          description: 'Gartner EA frameworks have improved PRC\'s architecture effectiveness from 2.8 to targeted 4.0, reducing integration costs by 41% across 89 government applications.',
+          impact: 'High',
+          evidence: 'Framework alignment progress tracked in Metrics'
+        },
+        {
+          title: 'Data-Driven Decision Making',
+          description: 'Implementation of Gartner analytics frameworks resulted in 34% improvement in program effectiveness and $12M in resource optimization.',
+          impact: 'High',
+          evidence: 'Success interconnections detailed in Metrics page'
+        }
+      ]
+    },
+    {
+      category: 'Technology Innovation',
+      icon: Zap,
+      color: 'purple',
+      items: [
+        {
+          title: 'Cloud-First Strategy Success',
+          description: 'Gartner\'s cloud migration roadmap achieved 52% infrastructure cost reduction and 67% improvement in service scalability, modernizing PRC\'s technology foundation.',
+          impact: 'Critical',
+          evidence: 'Implementation phase showing cloud modernization results'
+        },
+        {
+          title: 'Digital Service Excellence',
+          description: 'Following Gartner\'s digital government maturity model, PRC achieved 143% increase in online service adoption and 28-point improvement in citizen satisfaction.',
+          impact: 'High',
+          evidence: 'Citizen experience improvements detailed in success metrics'
+        },
+        {
+          title: 'Security and Compliance Leadership',
+          description: '99.7% security compliance rate achieved through Gartner security standards, ensuring robust protection of citizen data and government systems.',
+          impact: 'High',
+          evidence: 'Security metrics validated in comprehensive analysis'
+        }
+      ]
     }
+  ];
+
+  // Comprehensive Weaknesses and Risk Analysis
+  const gartnerPrcWeaknesses = [
+    {
+      category: 'Implementation Challenges',
+      icon: AlertTriangle,
+      color: 'red',
+      items: [
+        {
+          title: 'High Initial Investment Requirements',
+          description: 'Total investment of $14.4M across process automation, data analytics, cloud migration, and EA modernization represents significant upfront capital commitment.',
+          severity: 'High',
+          mitigation: 'Phased implementation approach with demonstrated 3.6:1 ROI validates investment; quarterly milestone reviews ensure value realization',
+          timeframe: 'Short-term'
+        },
+        {
+          title: 'Change Management Complexity',
+          description: 'Transforming 127 government processes and training 2.3M+ citizen touchpoints requires extensive organizational change management across multiple departments.',
+          severity: 'Medium',
+          mitigation: 'Gartner change management frameworks provide structured approach; dedicated change champions in each department',
+          timeframe: 'Medium-term'
+        },
+        {
+          title: 'Technical Integration Dependencies',
+          description: 'Modernizing 89 government applications while maintaining service continuity creates complex technical dependencies and potential disruption risks.',
+          severity: 'Medium',
+          mitigation: 'Gartner EA principles ensure systematic integration; parallel systems during transition phases',
+          timeframe: 'Ongoing'
+        }
+      ]
+    },
+    {
+      category: 'Strategic Dependencies',
+      icon: AlertCircle,
+      color: 'orange',
+      items: [
+        {
+          title: 'Vendor Lock-in Considerations',
+          description: 'Heavy reliance on Gartner methodologies and advisory services could create strategic dependency, potentially limiting flexibility in future technology choices.',
+          severity: 'Medium',
+          mitigation: 'Gartner frameworks are vendor-agnostic; internal capability building ensures knowledge transfer and independence',
+          timeframe: 'Long-term'
+        },
+        {
+          title: 'Skill Gap and Training Requirements',
+          description: 'Implementation of advanced Gartner frameworks requires specialized skills that may not exist within current PRC workforce, creating training and hiring needs.',
+          severity: 'Medium',
+          mitigation: 'Comprehensive training programs; partnership with educational institutions; phased knowledge transfer approach',
+          timeframe: 'Medium-term'
+        },
+        {
+          title: 'Political and Regulatory Alignment',
+          description: 'Government transformation initiatives must navigate political cycles and regulatory changes that could impact long-term strategic continuity.',
+          severity: 'Low',
+          mitigation: 'Gartner best practices emphasize governance structures that transcend political changes; documented frameworks ensure continuity',
+          timeframe: 'Long-term'
+        }
+      ]
+    }
+  ];
+
+  const getColorClasses = (color: string, type: 'strength' | 'weakness') => {
+    const colors = {
+      blue: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-800', icon: 'text-blue-600' },
+      green: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', icon: 'text-green-600' },
+      purple: { bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-800', icon: 'text-purple-600' },
+      red: { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-800', icon: 'text-red-600' },
+      orange: { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-800', icon: 'text-orange-600' }
+    };
+    return colors[color as keyof typeof colors] || colors.blue;
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Risk Assessment & Mitigation</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive risk analysis and mitigation strategies for PRC's digital transformation,
-            ensuring proactive management of potential challenges and obstacles.
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Gartner-PRC Integration: Comprehensive Strengths & Weaknesses Analysis
+          </h1>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            An in-depth evaluation of the strategic advantages and potential challenges of our Gartner partnership, 
+            providing balanced insights to guide decision-making and risk management in our digital transformation journey.
           </p>
         </div>
 
-        {/* Risk Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-red-500">
-            <XCircle className="w-12 h-12 text-red-600 mx-auto mb-4" />
-            <div className="text-3xl font-bold text-red-600 mb-2">2</div>
-            <div className="text-gray-700 text-sm">High Risk Items</div>
-            <div className="text-red-600 text-xs mt-1">Immediate attention required</div>
+        {/* Strategic Overview Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div className="bg-gradient-to-br from-green-500 via-blue-500 to-purple-600 text-white p-8 rounded-xl shadow-lg">
+            <div className="flex items-center mb-6">
+              <ThumbsUp className="h-8 w-8 mr-4" />
+              <h2 className="text-2xl font-bold">Strategic Strengths</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                <div className="text-2xl font-bold mb-1">9</div>
+                <div className="text-sm opacity-90">Core Advantages</div>
+              </div>
+              <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                <div className="text-2xl font-bold mb-1">$47M</div>
+                <div className="text-sm opacity-90">Annual Savings</div>
+              </div>
+              <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                <div className="text-2xl font-bold mb-1">3.6:1</div>
+                <div className="text-sm opacity-90">Average ROI</div>
+              </div>
+            </div>
+            <p className="text-green-100">
+              Our Gartner partnership delivers quantifiable value through proven frameworks, 
+              world-class research, and demonstrated operational excellence across all transformation domains.
+            </p>
           </div>
-          
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-yellow-500">
-            <AlertCircle className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
-            <div className="text-3xl font-bold text-yellow-600 mb-2">2</div>
-            <div className="text-gray-700 text-sm">Medium Risk Items</div>
-            <div className="text-yellow-600 text-xs mt-1">Active monitoring needed</div>
-          </div>
-          
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-green-500">
-            <CheckCircle2 className="w-12 h-12 text-green-600 mx-auto mb-4" />
-            <div className="text-3xl font-bold text-green-600 mb-2">1</div>
-            <div className="text-gray-700 text-sm">Low Risk Items</div>
-            <div className="text-green-600 text-xs mt-1">Standard controls sufficient</div>
+
+          <div className="bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 text-white p-8 rounded-xl shadow-lg">
+            <div className="flex items-center mb-6">
+              <ThumbsDown className="h-8 w-8 mr-4" />
+              <h2 className="text-2xl font-bold">Areas of Concern</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                <div className="text-2xl font-bold mb-1">6</div>
+                <div className="text-sm opacity-90">Risk Factors</div>
+              </div>
+              <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                <div className="text-2xl font-bold mb-1">$14.4M</div>
+                <div className="text-sm opacity-90">Investment Required</div>
+              </div>
+              <div className="bg-white/20 p-4 rounded-lg backdrop-blur-sm">
+                <div className="text-2xl font-bold mb-1">127</div>
+                <div className="text-sm opacity-90">Processes to Transform</div>
+              </div>
+            </div>
+            <p className="text-orange-100">
+              While manageable, implementation challenges require careful planning, significant investment, 
+              and comprehensive change management across all government departments.
+            </p>
           </div>
         </div>
 
-        {/* Detailed Risk Analysis */}
-        <div className="space-y-6 mb-12">
-          {risks.map((risk, index) => {
-            const level = riskLevels[index];
-            const colors = riskColors[level as keyof typeof riskColors];
-            const RiskIcon = getRiskIcon(level);
-            
-            return (
-              <div key={index} className={`bg-white rounded-xl shadow-lg ${colors.border} border-l-4`}>
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-lg ${colors.bg}`}>
-                        <RiskIcon className={`w-6 h-6 ${colors.icon}`} />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">{risk.risk}</h3>
-                        <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${colors.bg} ${colors.text} mt-1`}>
-                          {level} Risk
-                        </span>
-                      </div>
+        {/* Detailed Strengths Analysis */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center">
+            <Star className="h-8 w-8 mr-3 text-yellow-500" />
+            Strategic Advantages: Gartner Partnership Strengths
+          </h2>
+          
+          <div className="space-y-8">
+            {gartnerPrcStrengths.map((category, categoryIndex) => {
+              const colors = getColorClasses(category.color, 'strength');
+              const IconComponent = category.icon;
+              
+              return (
+                <div key={categoryIndex} className={`bg-gradient-to-r from-${category.color}-50 to-white rounded-xl p-8 shadow-lg border-l-4 ${colors.border}`}>
+                  <div className="flex items-center mb-6">
+                    <div className={`p-3 rounded-lg ${colors.bg} mr-4`}>
+                      <IconComponent className={`h-8 w-8 ${colors.icon}`} />
                     </div>
+                    <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Potential Impact</h4>
-                      <div className="flex items-start space-x-3 p-4 bg-red-50 rounded-lg">
-                        <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700 text-sm">{risk.impact}</p>
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {category.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="bg-white p-6 rounded-lg shadow border border-gray-100">
+                        <div className="flex justify-between items-start mb-4">
+                          <h4 className="text-lg font-bold text-gray-900">{item.title}</h4>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            item.impact === 'Critical' ? 'bg-red-100 text-red-800' :
+                            item.impact === 'High' ? 'bg-orange-100 text-orange-800' :
+                            'bg-blue-100 text-blue-800'
+                          }`}>
+                            {item.impact} Impact
+                          </span>
+                        </div>
+                        <p className="text-gray-700 mb-4 leading-relaxed text-sm">{item.description}</p>
+                        <div className="p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+                          <div className="text-xs text-gray-600">
+                            <strong className="text-blue-700">Evidence:</strong> {item.evidence}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Mitigation Strategy</h4>
-                      <div className="flex items-start space-x-3 p-4 bg-green-50 rounded-lg">
-                        <Shield className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <p className="text-gray-700 text-sm">{risk.mitigation}</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
 
-        {/* Risk Matrix */}
-        <div className="bg-white p-8 rounded-xl shadow-lg mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Risk Assessment Matrix</h2>
+        {/* Detailed Weaknesses Analysis */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center">
+            <AlertTriangle className="h-8 w-8 mr-3 text-red-500" />
+            Risk Assessment: Implementation Challenges & Mitigation
+          </h2>
           
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left p-4 font-semibold text-gray-900">Risk Factor</th>
-                  <th className="text-center p-4 font-semibold text-gray-900">Probability</th>
-                  <th className="text-center p-4 font-semibold text-gray-900">Impact</th>
-                  <th className="text-center p-4 font-semibold text-gray-900">Risk Level</th>
-                  <th className="text-center p-4 font-semibold text-gray-900">Response Strategy</th>
-                </tr>
-              </thead>
-              <tbody>
-                {risks.map((risk, index) => {
-                  const level = riskLevels[index];
-                  const colors = riskColors[level as keyof typeof riskColors];
-                  const probability = index < 2 ? 'High' : index < 4 ? 'Medium' : 'Low';
-                  const impact = index < 2 ? 'High' : 'Medium';
+          <div className="space-y-8">
+            {gartnerPrcWeaknesses.map((category, categoryIndex) => {
+              const colors = getColorClasses(category.color, 'weakness');
+              const IconComponent = category.icon;
+              
+              return (
+                <div key={categoryIndex} className={`bg-gradient-to-r from-${category.color}-50 to-white rounded-xl p-8 shadow-lg border-l-4 ${colors.border}`}>
+                  <div className="flex items-center mb-6">
+                    <div className={`p-3 rounded-lg ${colors.bg} mr-4`}>
+                      <IconComponent className={`h-8 w-8 ${colors.icon}`} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
+                  </div>
                   
-                  return (
-                    <tr key={index} className="border-t hover:bg-gray-50">
-                      <td className="p-4">
-                        <div className="font-medium text-gray-900">{risk.risk}</div>
-                      </td>
-                      <td className="p-4 text-center">
-                        <span className={`px-2 py-1 rounded-full text-sm font-medium ${
-                          probability === 'High' ? 'bg-red-100 text-red-800' : 
-                          probability === 'Medium' ? 'bg-yellow-100 text-yellow-800' : 
-                          'bg-green-100 text-green-800'
-                        }`}>
-                          {probability}
-                        </span>
-                      </td>
-                      <td className="p-4 text-center">
-                        <span className={`px-2 py-1 rounded-full text-sm font-medium ${
-                          impact === 'High' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
-                        }`}>
-                          {impact}
-                        </span>
-                      </td>
-                      <td className="p-4 text-center">
-                        <span className={`px-2 py-1 rounded-full text-sm font-medium ${colors.bg} ${colors.text}`}>
-                          {level}
-                        </span>
-                      </td>
-                      <td className="p-4 text-center">
-                        <span className="px-2 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                          {level === 'High' ? 'Mitigate' : level === 'Medium' ? 'Monitor' : 'Accept'}
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                  <div className="space-y-6">
+                    {category.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="bg-white p-6 rounded-lg shadow border border-gray-100">
+                        <div className="flex justify-between items-start mb-4">
+                          <h4 className="text-lg font-bold text-gray-900">{item.title}</h4>
+                          <div className="flex space-x-2">
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                              item.severity === 'High' ? 'bg-red-100 text-red-800' :
+                              item.severity === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-green-100 text-green-800'
+                            }`}>
+                              {item.severity} Risk
+                            </span>
+                            <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                              {item.timeframe}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <p className="text-gray-700 mb-4 leading-relaxed">{item.description}</p>
+                        
+                        <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg">
+                          <h5 className="font-semibold text-green-800 mb-2 flex items-center">
+                            <Shield className="h-4 w-4 mr-2" />
+                            Mitigation Strategy:
+                          </h5>
+                          <p className="text-green-700 text-sm">{item.mitigation}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Risk Management Framework */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Risk Monitoring Process</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Identification</h4>
-                  <p className="text-gray-600 text-sm">Continuous scanning for new risks and emerging threats</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Assessment</h4>
-                  <p className="text-gray-600 text-sm">Evaluate probability and impact using standardized criteria</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Response</h4>
-                  <p className="text-gray-600 text-sm">Implement appropriate mitigation strategies</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Monitoring</h4>
-                  <p className="text-gray-600 text-sm">Regular review and adjustment of risk controls</p>
-                </div>
-              </div>
+        {/* Balanced Assessment Summary */}
+        <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 text-white p-8 rounded-xl shadow-lg mb-8">
+          <h2 className="text-3xl font-bold mb-6 text-center">Balanced Strategic Assessment</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl font-bold mb-4 text-green-300">Competitive Advantages</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 mr-2 text-green-400" />Proven 3.6:1 ROI across all investments</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 mr-2 text-green-400" />47% operational efficiency improvements</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 mr-2 text-green-400" />World-class research and advisory access</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 mr-2 text-green-400" />Battle-tested government transformation frameworks</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 mr-2 text-green-400" />2.3M+ citizens benefiting from improved services</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+              <h3 className="text-xl font-bold mb-4 text-orange-300">Managed Risks</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center"><AlertCircle className="h-4 w-4 mr-2 text-orange-400" />$14.4M investment requires careful financial planning</li>
+                <li className="flex items-center"><AlertCircle className="h-4 w-4 mr-2 text-orange-400" />127 processes need coordinated transformation</li>
+                <li className="flex items-center"><AlertCircle className="h-4 w-4 mr-2 text-orange-400" />Skill development required across departments</li>
+                <li className="flex items-center"><AlertCircle className="h-4 w-4 mr-2 text-orange-400" />Change management across multiple agencies</li>
+                <li className="flex items-center"><AlertCircle className="h-4 w-4 mr-2 text-orange-400" />Technical integration complexity</li>
+              </ul>
             </div>
           </div>
           
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Escalation Procedures</h3>
-            <div className="space-y-4">
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <div className="flex items-center space-x-2 mb-2">
-                  <XCircle className="w-5 h-5 text-red-600" />
-                  <h4 className="font-semibold text-red-900">High Risk</h4>
-                </div>
-                <p className="text-red-800 text-sm">Immediate escalation to EA Governance Board and PRC leadership</p>
+          <div className="text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-6">
+              <div>
+                <div className="text-3xl font-bold text-green-300 mb-2">Strong</div>
+                <div className="text-white/80">Strategic Foundation</div>
               </div>
-              <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <div className="flex items-center space-x-2 mb-2">
-                  <AlertCircle className="w-5 h-5 text-yellow-600" />
-                  <h4 className="font-semibold text-yellow-900">Medium Risk</h4>
-                </div>
-                <p className="text-yellow-800 text-sm">Weekly review with project steering committee</p>
+              <div>
+                <div className="text-3xl font-bold text-yellow-300 mb-2">Manageable</div>
+                <div className="text-white/80">Implementation Risks</div>
               </div>
-              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                <div className="flex items-center space-x-2 mb-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-600" />
-                  <h4 className="font-semibold text-green-900">Low Risk</h4>
-                </div>
-                <p className="text-green-800 text-sm">Monthly monitoring through standard reporting</p>
+              <div>
+                <div className="text-3xl font-bold text-blue-300 mb-2">Positive</div>
+                <div className="text-white/80">Net Assessment</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Risk Mitigation Success Factors */}
-        <div className="bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-white p-8 rounded-xl">
-          <h2 className="text-2xl font-bold mb-6 text-center">Risk Mitigation Success Factors</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/20 p-6 rounded-lg text-center">
-              <Shield className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-lg font-semibold mb-2">Proactive Planning</div>
-              <div className="text-sm opacity-90">
-                Early identification and preparation for potential risks
+        {/* Conclusion and Recommendation */}
+        <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Strategic Recommendation: Proceed with Confidence
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
+                <Award className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                <h3 className="font-bold text-gray-900 mb-2">Strengths Outweigh Risks</h3>
+                <p className="text-gray-700 text-sm">Nine strategic advantages with quantified benefits significantly exceed six manageable implementation challenges.</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg">
+                <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="font-bold text-gray-900 mb-2">Risk Mitigation Ready</h3>
+                <p className="text-gray-700 text-sm">Comprehensive mitigation strategies address each identified weakness with proven Gartner methodologies.</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-purple-50 to-green-50 rounded-lg">
+                <TrendingUp className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                <h3 className="font-bold text-gray-900 mb-2">Transformational Impact</h3>
+                <p className="text-gray-700 text-sm">Partnership positions PRC as a leader in digital government excellence with measurable citizen benefits.</p>
               </div>
             </div>
             
-            <div className="bg-white/20 p-6 rounded-lg text-center">
-              <AlertTriangle className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-lg font-semibold mb-2">Stakeholder Engagement</div>
-              <div className="text-sm opacity-90">
-                Active involvement in risk assessment and response
-              </div>
-            </div>
-            
-            <div className="bg-white/20 p-6 rounded-lg text-center">
-              <CheckCircle2 className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-lg font-semibold mb-2">Contingency Planning</div>
-              <div className="text-sm opacity-90">
-                Ready alternatives for high-impact scenarios
-              </div>
-            </div>
-            
-            <div className="bg-white/20 p-6 rounded-lg text-center">
-              <XCircle className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-lg font-semibold mb-2">Regular Reviews</div>
-              <div className="text-sm opacity-90">
-                Continuous monitoring and adaptive management
-              </div>
+            <div className="p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg">
+              <p className="text-lg text-gray-800 leading-relaxed">
+                The comprehensive analysis demonstrates that our Gartner-PRC integration represents a 
+                <strong className="text-blue-600">strategically sound investment</strong> with 
+                <strong className="text-green-600">quantifiable returns</strong> and 
+                <strong className="text-purple-600">manageable risks</strong>. 
+                The partnership's proven track record, combined with robust mitigation strategies, 
+                supports a confident recommendation to proceed with full implementation.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default Risks;
+}

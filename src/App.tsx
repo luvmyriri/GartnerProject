@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import Home from './pages/Home';
+import GartnerFramework from './pages/GartnerFramework';
 import Overview from './pages/Overview';
 import EADomains from './pages/EADomains';
 import Implementation from './pages/Implementation';
@@ -15,6 +16,8 @@ function App() {
     switch (activeSection) {
       case 'home':
         return <Home onSectionChange={setActiveSection} />;
+      case 'gartner':
+        return <GartnerFramework />;
       case 'overview':
         return <Overview />;
       case 'domains':
@@ -73,7 +76,7 @@ function App() {
           </div>
           
           <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-300 text-sm">
-            <p>&copy; 2025 PRC Gartner EA Framework Showcase. Built with React, TypeScript, and Tailwind CSS.</p>
+            <p>&copy; 2025 PRC Gartner EA Framework Showcase. Developed and Presented by Lamsen, Tabios, Evangelista, Agarano, Galdiano, and Garcia</p>
           </div>
         </div>
       </footer>

@@ -165,15 +165,103 @@ const Home: React.FC<HomeProps> = ({ onSectionChange }) => {
         </div>
       </section>
 
+      {/* Gartner Introduction */}
+      <section className="py-20 bg-gradient-to-br from-indigo-900 via-blue-800 to-blue-900 text-white">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-4 backdrop-blur-sm">
+                    <span className="text-2xl font-bold text-white">G</span>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold mb-2">Gartner Inc.</h2>
+                    <p className="text-blue-100 font-medium">World's Leading Research & Advisory Company</p>
+                  </div>
+                </div>
+                
+                <h3 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
+                  Trusted by 15,000+ Organizations Worldwide
+                </h3>
+                
+                <p className="text-xl mb-8 opacity-90 leading-relaxed">
+                  For over 45 years, Gartner has been the definitive source for technology research, 
+                  advisory services, and strategic insights. Their Enterprise Architecture Framework 
+                  has successfully guided digital transformation initiatives across 50+ government agencies 
+                  in 30 countries.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  <div className="bg-white bg-opacity-10 backdrop-blur-sm p-4 rounded-xl">
+                    <div className="text-3xl font-bold text-blue-100">87%</div>
+                    <div className="text-sm opacity-90">Success Rate in Government Projects</div>
+                  </div>
+                  <div className="bg-white bg-opacity-10 backdrop-blur-sm p-4 rounded-xl">
+                    <div className="text-3xl font-bold text-blue-100">65%</div>
+                    <div className="text-sm opacity-90">Reduction in Project Failures</div>
+                  </div>
+                </div>
+                
+                <button
+                  onClick={() => onSectionChange('gartner')}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 hover:scale-105 inline-flex items-center shadow-xl"
+                >
+                  Learn More About Gartner
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="lg:pl-8">
+                <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-3xl">
+                  <h3 className="text-2xl font-bold mb-6 text-center">Why Choose Gartner EA Framework?</h3>
+                  
+                  <div className="space-y-6">
+                    {[
+                      {
+                        title: "Proven Global Success",
+                        description: "Successfully implemented in major government agencies worldwide including UK HMRC, Singapore GovTech, and Australia DHS"
+                      },
+                      {
+                        title: "Research-Backed Methodology", 
+                        description: "Built on decades of research by 2,000+ analysts and refined through real-world implementations"
+                      },
+                      {
+                        title: "Risk Mitigation",
+                        description: "Structured approach reduces digital transformation project failure rates significantly"
+                      },
+                      {
+                        title: "Philippine Context",
+                        description: "Specifically adapted for PRC's unique challenges including massive scale and geographic distribution"
+                      }
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-start space-x-4">
+                        <div className="w-6 h-6 bg-blue-400 rounded-full flex-shrink-0 mt-1 flex items-center justify-center">
+                          <span className="text-white text-sm font-bold">{index + 1}</span>
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-blue-100 mb-1">{item.title}</h4>
+                          <p className="text-sm opacity-90">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Gartner Framework Preview */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Gartner EA Framework Application</h2>
+              <h2 className="text-4xl font-bold mb-6 text-gray-900">The Six-Domain Framework</h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Six comprehensive domains working together to transform PRC operations
-                and improve service delivery across the Philippines.
+                Gartner's comprehensive Enterprise Architecture framework consists of six interconnected domains 
+                that work together to transform PRC operations and improve service delivery across the Philippines.
               </p>
             </div>
 
